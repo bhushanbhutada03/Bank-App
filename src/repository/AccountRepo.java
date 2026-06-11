@@ -1,0 +1,31 @@
+package repository;
+
+import domain.Account;
+
+import java.util.*;
+
+public class AccountRepo {
+    private final Map<String ,Account> accountsByNum = new HashMap<>();
+
+    public void save(Account account){
+        accountsByNum.put(account.getAccountNumber(),account);
+    }
+
+    public List<Account> findAll() {
+        return new ArrayList<>(accountsByNum.values());
+    }
+
+    public Optional<Account> findByNumber(String accountNumber) {
+        return Optional.ofNullable(accountsByNum.get(accountNumber ));
+    }
+
+    public List<Account> findByCustomerId(String customerId) {
+        List<Account> result =new ArrayList<>();
+        for(Account a : accountsByNum.values()){
+            if(a.getCustomerId().equals(customerId)){
+                result.add(a);
+            }
+        }
+        return result;
+    }
+}

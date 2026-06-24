@@ -1,4 +1,4 @@
-# Bank Management System
+# BankFlow
 
 A console-based banking application developed using Core Java following Layered Architecture principles. The project demonstrates Object-Oriented Programming (OOP), Repository Pattern, Service Layer abstraction, custom exception handling, transaction management, and in-memory data persistence using Java Collections Framework.
 
